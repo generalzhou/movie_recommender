@@ -39,8 +39,8 @@ Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 
-require APP_ROOT.join('db','user_ratings.rb')
-require APP_ROOT.join('db','item_ratings.rb')
+# require APP_ROOT.join('db','user_ratings.rb')
+# require APP_ROOT.join('db','item_ratings.rb')
 require APP_ROOT.join('db','similar_items.rb')
 
 # Set up the database and models

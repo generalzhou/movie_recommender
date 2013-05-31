@@ -1,17 +1,20 @@
 <h1>Genres</h1>
 
+<div class="genre_select">
+  
+  <form action="/pick_movies/genres" method="get">
 
-<form action="/pick_movies/genres" method="get">
-<ul>
-  <% Genre.all.each do |genre| %>
-  <li>
-    <h3>
-      <input NAME="<%= genre.id %>" TYPE="checkbox" VALUE="<%= genre.id %>">
-        <%= "#{genre.name}" %>
-      </input>
-    </h3>
-  </li>
-  <% end %>  
-</ul>
-<input type="submit" value="Next">
+    <% Genre.all[1..-1].each do |genre| %>    
+      <div class="genre_selector">
+        
+        <input NAME="<%= genre.id %>" TYPE="checkbox" class='toggle' VALUE="<%= genre.id %>">
+          <h3 class='toggle'><%= "#{genre.name}" %></h3>
+        </input>
+      </div>
+    <br>
+    <% end %>  
+
+  <input type="submit" value="Next">
+
+</div>
 </form>

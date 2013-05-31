@@ -2,6 +2,7 @@ def recommend(user1_ratings)
   total_scores = {}
   normalization_factor = {}
   user1_ratings.each do |movie, rating|
+
     SIMILAR_ITEMS[movie].each do |movie2, score|
       unless user1_ratings.keys.include?(movie2)
         total_scores[movie2] ||= 0
@@ -11,15 +12,21 @@ def recommend(user1_ratings)
       end
 
     end
-  
   end
-
-  total_scores.keys.inject({}) do |rec, movie|
+  recommendations = total_scores.keys.inject({}) do |rec, movie|
     rec[movie] = total_scores[movie]/normalization_factor[movie]
     rec
   end
-
+  clean_recs(recommendations).sort_by {|movie,score| -score}
 end
+
+def clean_recs(recs)
+  recs.keys.each do |key|
+    recs[key] = [(recs[key]*100)/100.0, 5.0].min
+  end
+  recs
+end
+
 
 def top_matches(user1_ratings, preferences = USER_RATINGS)
   preferences.inject({}) do |matches, (user2_id, user2_ratings)|    
