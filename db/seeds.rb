@@ -96,9 +96,9 @@ def get_most_relevant(matches)
 end
 
 
-File.open(APP_ROOT.join('db', 'similar_items.rb').to_s ,'w') do |f|
-  f.write('SIMILAR_ITEMS = ' + calculate_similar_items.inspect )
-end
+# File.open(APP_ROOT.join('db', 'similar_items.rb').to_s ,'w') do |f|
+#   f.write('SIMILAR_ITEMS = ' + calculate_similar_items.inspect )
+# end
 
 
 
@@ -112,7 +112,7 @@ end
 # end
 # creates a hash of all the rating data
 
-# load_all(APP_ROOT.join('db', 'movielens-100k').to_s)
+load_all(APP_ROOT.join('db', 'movielens-100k').to_s)
 
 
 

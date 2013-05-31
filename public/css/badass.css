@@ -1,16 +1,13 @@
 body{
-  margin:0 auto;
-  width: 800px;
+
 }
 
-div.center_float {
-
-  margin:0 auto;
-  margin-top:80px;
-  width: 800px;
-  background-color: rgba(68, 122, 137,0.7);
+div.center_bar {
+  margin-top:100px;
+  margin-bottom:400px;
+  width: 100;
+  background-color: rgba(0, 0, 0,0.5);
   color:white;
-
 }
 
 h1{
@@ -20,9 +17,9 @@ h1{
 
 div.genre_select{
   margin-left:30px;
-  columns:3;
--webkit-columns:3; /* Safari and Chrome */
--moz-columns:3; /* Firefox */
+  columns:5;
+-webkit-columns:5; /* Safari and Chrome */
+-moz-columns:5; /* Firefox */
 }
 
 div.genre_selector {

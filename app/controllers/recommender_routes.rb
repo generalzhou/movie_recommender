@@ -7,7 +7,11 @@ get '/start' do
 end
 
 get '/pick_genres' do
-  erb :pick_genres
+  if request.xhr?
+    erb :pick_genres, :layout =>false
+  else
+    erb :pick_genres
+  end
 end
 
 get '/pick_movies/genres' do

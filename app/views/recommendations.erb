@@ -1,9 +1,13 @@
+<div class='center_bar' id='recommendations'>
+  <div style="width:400px; margin:0 auto;">
 
-<ul>
+<h1>Watch these movies!!</h1>
+  <ul>
   <% @recommendations.each do |movie_id, score| %>  
   <li>
-    <%="#{Movie.find_by_id(movie_id).title} : score #{score} out of 5" %>
+    <%="#{Movie.find_by_id(movie_id).title}" %>
   </li>
   <% end %>
 </ul>
-
+</div>
+</div>
