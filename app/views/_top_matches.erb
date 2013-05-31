@@ -1,0 +1,8 @@
+<h2>here are your top matches!</h2>
+
+<ul>
+  <% @top_matches.each do |user, score| %>
+    <%= "<li>id: #{user}: score: #{(score * 100).to_i}</li>" %>
+  <% end %>
+</ul>
+

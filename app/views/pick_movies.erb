@@ -1,0 +1,26 @@
+<h1>Movies</h1>
+
+<form action="/get_recommendations" method="post">
+<ul>
+  <% @genre_ids.each do |id| %>
+  <% genre = Genre.find_by_id(id) %>
+  <h3><%= genre.name %></h3>
+    <% genre.movies.limit(10).each do |movie| %>
+      <li>
+        <h5>
+          <%= movie.title %>:  
+          <select name='<%=movie.id%>'>
+            <option value='0'>not rated</option>
+            <option value='1'>1 stars</option>
+            <option value="2">2 stars</option>
+            <option value="3">3 stars</option>
+            <option value="4">4 stars</option>
+            <option value="5">5 stars</option>
+          </select>
+        </h5>
+      </li>
+    <% end %>  
+  <% end %>  
+</ul>
+<input type="submit" value="Next">
+</form>

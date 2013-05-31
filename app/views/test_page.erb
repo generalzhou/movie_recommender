@@ -1,0 +1,18 @@
+<h2>Pearson Correlation!</h2>
+<form action='/pearson' method='post'>
+  <input type="num" name='user1' placeholder='first user' />
+  <input type="num" name='user2' placeholder='second user' />
+  <input type="submit">
+</form>
+
+<h2>Top users with similar tastes!</h2>
+<form action='/top_critic_matches' method='post'>
+  <input type="num" name='user_id' placeholder='this is you' />
+  <input type="submit">
+</form>
+
+<h2>Similar Movies</h2>
+<form action='/top_movie_matches' method='post'>
+  <input type="num" name='item_id' placeholder='movie id' />
+  <input type="submit" value='find movies!'>
+</form>

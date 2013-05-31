@@ -18,9 +18,13 @@ require 'logger'
 require 'sinatra'
 require "sinatra/reloader" if development?
 
+require 'pry'
+
 require 'faker'
 require 'erb'
 require 'bcrypt'
+
+require 'benchmark'
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
@@ -34,5 +38,15 @@ Dir[APP_ROOT.join('app', 'uploaders', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
+
+require APP_ROOT.join('db','user_ratings.rb')
+require APP_ROOT.join('db','item_ratings.rb')
+require APP_ROOT.join('db','similar_items.rb')
+
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+# Set up variables for the recommendation algorithm
+MOVIE_SAMPLES = 20
+USER_SAMPLES = 10
+PEARSON_SAMPLES = 30

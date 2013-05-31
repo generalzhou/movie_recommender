@@ -1,0 +1,17 @@
+<h1>Genres</h1>
+
+
+<form action="/pick_movies/genres" method="get">
+<ul>
+  <% Genre.all.each do |genre| %>
+  <li>
+    <h3>
+      <input NAME="<%= genre.id %>" TYPE="checkbox" VALUE="<%= genre.id %>">
+        <%= "#{genre.name}" %>
+      </input>
+    </h3>
+  </li>
+  <% end %>  
+</ul>
+<input type="submit" value="Next">
+</form>

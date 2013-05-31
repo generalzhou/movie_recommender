@@ -1,0 +1,9 @@
+
+<ul>
+  <% @recommendations.each do |movie_id, score| %>  
+  <li>
+    <%="#{Movie.find_by_id(movie_id).title} : score #{score} out of 5" %>
+  </li>
+  <% end %>
+</ul>
+

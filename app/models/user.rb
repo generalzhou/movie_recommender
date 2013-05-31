@@ -1,4 +1,12 @@
 class User < ActiveRecord::Base
+
+  has_many :ratings
+  has_many :movies, :through => :ratings
+
+  has_many :favorite_genres
+  has_many :genres, :through => :favorite_genres
+
+
   include BCrypt
 
   def password

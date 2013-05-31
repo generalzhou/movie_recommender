@@ -1,0 +1,10 @@
+<h2>here are your top matches for <%= Movie.find_by_id(@item_id).title %></h2>
+
+<ul>
+  <% @top_matches.each do |movie_id, score| %>
+    <% if Movie.find_by_id(movie_id) %>
+      <%= "<li>#{Movie.find_by_id(movie_id).title} : score: #{(score * 100).to_i}%</li>" %>
+    <% end %>    
+  <% end %>
+</ul>
+
