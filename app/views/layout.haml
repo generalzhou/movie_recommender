@@ -1,0 +1,12 @@
+!!! HTML
+%html{lang: 'en', style: 'background: url(\'' + get_random_image + '\') no-repeat black center center fixed;'}
+%head
+  %link{rel: 'stylesheet', href: '/css/normalize.css'}
+  %link{rel: 'stylesheet', href: '/css/badass.css'}
+
+  %script{src: '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'}
+  %script{src: '/js/badass.js'}
+
+%body
+  = yield
+  

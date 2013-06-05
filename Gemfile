@@ -19,6 +19,8 @@ gem 'rake'
 
 gem 'pry'
 
+gem 'haml'
+
 gem 'shotgun'
 gem 'bcrypt-ruby'
 # gem 'carrierwave'

@@ -1,0 +1,22 @@
+.center_bar#pick_movies
+
+  %div{style:"width:400px; margin:0 auto;"}
+    %h1 Movies
+
+    %form{action:"/get_recommendations", method:"post"}
+      %ul
+        - @genre_ids.each do |id|
+          - genre = Genre.find_by_id(id)
+          %h3= genre.name
+          - genre.movies.limit(10).each do |movie|
+            %li
+              %h5
+                = "#{movie.title} :"
+                %select{name: movie.id}
+                  %option{value:'0'} not rated
+                  %option{value:'1'} 1 stars
+                  %option{value:'2'} 2 stars
+                  %option{value:'3'} 3 stars
+                  %option{value:'4'} 4 stars
+                  %option{value:'5'} 5 stars
+      %input{type: "submit", value: "Next"}

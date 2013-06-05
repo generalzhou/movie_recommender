@@ -1,0 +1,10 @@
+.center_bar#pick_genres{name:"genre_picker"}
+  %h1 Pick Some Genres
+  .genre_select
+    %form{action:"/pick_movies/genres", method:"get"}
+      = Genre.all[1..-1].each do |genre|
+        .genre_selector
+          %input.toggle{name: "#{genre.id}", type: "checkbox", value:"#{genre.id}" }
+            %h3.toggle= genre.name
+      %br/
+    %input{type:"submit", value:"Next"}

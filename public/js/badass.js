@@ -1,23 +1,17 @@
 $(document).ready(function(){
 
-    $("#start").click(function(event){
+  $("#start").click(function(event){
     event.preventDefault();
     if ($('#pick_genres').length == 0) {
-      $.get('/pick_genres', function(response) {
+      $.get('/pick_genres', function(response){
         $('body').append(response);
-        $('body').scrollTop(600);
-        });
-      }
-    }); 
+        
+        $('body').animate({
+          scrollTop: $("div.genre_select").offset().top - 200
+        }, 300);
 
-    $("#start").click(function(event){
-    event.preventDefault();
-    if ($('#pick_movies').length == 0) {
-      $.get('/pick_genres', function(response) {
-        $('body').append(response);
-        $('body').scrollTop(600);
-        });
-      }
-    }); 
+      });
+    }
+  }); 
 
 });

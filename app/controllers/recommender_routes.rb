@@ -3,20 +3,20 @@ get '/' do
 end
 
 get '/start' do
-  erb :start
+  haml :start
 end
 
 get '/pick_genres' do
   if request.xhr?
-    erb :pick_genres, :layout =>false
+    haml :pick_genres, :layout =>false
   else
-    erb :pick_genres
+    haml :pick_genres
   end
 end
 
 get '/pick_movies/genres' do
   @genre_ids = params.values.map { |id| id.to_i }
-  erb :pick_movies
+  haml :pick_movies
 end
 
 post '/get_recommendations' do
