@@ -1,9 +1,3 @@
-This is the standard Dev Bootcamp Sinatra file with some extras. Those include:
+##Movie Recommender
 
-  - a User model pre-populated with relevant Bcrypt methods 
-  - a rake db:yolo which creates, migrates, and seeds your database
-  - a rake db:fuckit which drops, creates, migrates and seeds your database
-  - a rake db:console which puts you into a psql session
-  - a rake console which puts you into an irb session loaded with access to the models
-  - faker gem already required
-  - carrierwave gem/environment present but commented out
+This is a WIP machine learning project I started while at Dev Bootcamp. This program uses movie rating data from http://www.grouplens.org/node/73 to generate similarity scores between movies. This score is used to determine how likely you are to like movie 2 if you like movie 1, and is calculated using a method called Pearson Correlation.
