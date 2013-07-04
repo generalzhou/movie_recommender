@@ -1,0 +1,8 @@
+.center_bar#recommendations
+  %div(style="width:400px; margin:0 auto;")
+
+    %h1 Watch these movies!!
+      %ul
+      - @recommendations.each do |movie_id, score|
+        %li
+          = Movie.find_by_id(movie_id).title

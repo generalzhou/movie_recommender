@@ -1,6 +1,5 @@
 require 'rake'
 
-
 require ::File.expand_path('../config/environment', __FILE__)
 
 # Include all of ActiveSupport's core class extensions, e.g., String#camelize
@@ -132,7 +131,7 @@ namespace :db do
     puts "Current version: #{ActiveRecord::Migrator.current_version}"
   end
 
-  desc "Databse console"
+  desc "Database console"
   task :console do
     exec "psql -d #{DB_NAME}"
   end

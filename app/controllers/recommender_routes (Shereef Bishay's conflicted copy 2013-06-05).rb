@@ -34,6 +34,6 @@ post '/get_recommendations' do
     i += 1
   end
 
-  haml :recommendations
+  erb :recommendations
 end
 
